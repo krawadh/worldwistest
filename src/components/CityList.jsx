@@ -4,6 +4,7 @@ import styles from "./CityList.module.css";
 import Spinner from "./Spinner";
 
 export default function CityList({ cities, isLoading }) {
+  console.log("In citiList-----", cities, isLoading);
   if (isLoading) return <Spinner />;
 
   if (cities.length === 0) {
@@ -24,7 +25,7 @@ CityList.propTypes = {
   cities: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
+      cityName: PropTypes.string.isRequired,
       // Add other properties that the city object may have
     })
   ).isRequired, // cities is required and must be an array of objects

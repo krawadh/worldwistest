@@ -8,8 +8,7 @@ import Login from "./pages/Login";
 import CityList from "./components/CityList";
 import { useEffect, useState } from "react";
 
-const BASE_URL =
-  "https://my-json-server.typicode.com/Rahulxpro/worldwiseData/cities";
+const BASE_URL = "https://my-json-server.typicode.com/Rahulxpro/worldwiseData";
 
 export default function App() {
   const [cities, setCities] = useState([]);
@@ -30,7 +29,6 @@ export default function App() {
     }
     fetchCities();
   }, []);
-  console.log(cities);
   return (
     <BrowserRouter>
       <Routes>
@@ -40,7 +38,7 @@ export default function App() {
         <Route path="login" element={<Login />} />
         <Route path="app" element={<AppLayout />}>
           <Route
-            path="/"
+            path="index"
             element={<CityList cities={cities} isLoading={isLoading} />}
           />
           <Route
